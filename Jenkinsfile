@@ -11,12 +11,12 @@ pipeline {
                            }
          stage('Build') {
              steps {
-                     sh ''
+                     sh '/home/harry/workdir/apache-maven-3.9.6/bin/mvn install'
                    }
                         }
          stage('Deploy') {
              steps {
-                     sh ''
+                     sh 'cp target/masterslave.war /home/harry/workdir/apache-tomcat-9.0.86/webapps'
                    }
                          }
 
